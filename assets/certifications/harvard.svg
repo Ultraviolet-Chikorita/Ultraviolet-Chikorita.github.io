@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 72" role="img" aria-labelledby="title">
+  <title id="title">Harvard University</title>
+  <path fill="#a51c30" d="M4 4h56v39c0 13-11 21-28 26C15 64 4 56 4 43Z"/>
+  <path fill="#fff" d="M12 15h12v11H12zm14 0h12v11H26zm14 0h12v11H40zM19 31h12v11H19zm14 0h12v11H33z"/>
+  <g fill="#a51c30" font-family="Georgia,serif" font-size="7" font-weight="700" text-anchor="middle"><text x="18" y="23">VE</text><text x="32" y="23">RI</text><text x="46" y="23">TAS</text><text x="25" y="39">H</text><text x="39" y="39">U</text></g>
+</svg>

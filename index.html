@@ -23,12 +23,23 @@
     content="Python-first AI systems, backend engineering, and fullstack product delivery.">
   <meta name="twitter:image" content="assets/og.png">
   <title>Yuvan Chikka - Portfolio</title>
-  <link rel="stylesheet" href="styles.css?v=35">
+  <link rel="stylesheet" href="styles.css?v=54">
 </head>
 <body>
   <div class="page-shell">
-    <aside class="eye-panel" aria-hidden="true">
-      <canvas id="techEye"></canvas>
+    <aside class="eye-panel" aria-label="Visual preferences">
+      <button
+        class="cursor-toggle"
+        id="cursorToggle"
+        type="button"
+        aria-pressed="false">
+        <span class="cursor-toggle-label">Custom cursor</span>
+        <span class="cursor-toggle-status" aria-hidden="true">
+          <span class="cursor-toggle-track"><span class="cursor-toggle-knob"></span></span>
+          <span id="cursorToggleState">Off</span>
+        </span>
+      </button>
+      <canvas id="techEye" aria-hidden="true"></canvas>
     </aside>
 
     <main class="content">
@@ -82,10 +93,10 @@
 
       <p class="intro-copy">
         <span class="intro-copy-lead">
-          Computer Science student at Queen Mary with two years of hands-on AI engineering experience.
+          Computer Science student at Queen Mary with over two years of hands-on AI engineering experience.
         </span>
         <span class="intro-copy-detail">
-          Building Python-based workflows and fullstack products with Django, FastAPI, and Flask.
+          Building AI systems, Python backends, and fullstack products from research prototypes to deployment.
         </span>
       </p>
 
@@ -104,37 +115,55 @@
         <div class="profile-grid">
           <article class="profile-domain">
             <span class="domain-code">AI / 01</span>
-            <h3>AI systems</h3>
-            <p>
-              LLM evaluation, RAG, agent workflows, natural language processing, reinforcement
-              learning, and classical machine learning.
-            </p>
-            <ul class="skill-list" aria-label="AI technologies">
-              <li>PyTorch</li><li>TensorFlow</li><li>Hugging Face</li><li>LangChain</li><li>spaCy</li>
+            <h3>AI &amp; safety</h3>
+            <p>Model behaviour, evaluation, interpretability, and classical machine learning.</p>
+            <ul class="skill-list" aria-label="AI and safety technologies">
+              <li>PyTorch</li><li>TensorFlow</li><li>Transformers</li><li>scikit-learn</li><li>PyRIT</li><li>RAMPART</li>
             </ul>
           </article>
 
           <article class="profile-domain">
-            <span class="domain-code">SYS / 02</span>
+            <span class="domain-code">MM / 02</span>
+            <h3>Multimodal systems</h3>
+            <p>Retrieval and generation across video, images, speech, and text.</p>
+            <ul class="skill-list" aria-label="Multimodal technologies">
+              <li>LangChain</li><li>CLIP</li><li>Whisper</li><li>spaCy</li><li>Ollama</li><li>FFmpeg</li>
+            </ul>
+          </article>
+
+          <article class="profile-domain">
+            <span class="domain-code">SYS / 03</span>
             <h3>Python backend</h3>
-            <p>
-              APIs, data services, asynchronous workflows, relational persistence, and production
-              integrations built around Python.
-            </p>
+            <p>Production APIs, relational services, and business-process automation.</p>
             <ul class="skill-list" aria-label="Backend technologies">
-              <li>Django</li><li>FastAPI</li><li>Flask</li><li>Celery</li><li>PostgreSQL</li>
+              <li>Django</li><li>FastAPI</li><li>Flask</li><li>SQLAlchemy</li><li>Twilio</li><li>Redis</li>
             </ul>
           </article>
 
           <article class="profile-domain">
-            <span class="domain-code">WEB / 03</span>
+            <span class="domain-code">DATA / 04</span>
+            <h3>Data &amp; modelling</h3>
+            <p>Data pipelines, forecasting, analysis, and visualisation.</p>
+            <ul class="skill-list" aria-label="Data technologies">
+              <li>PostgreSQL</li><li>MySQL</li><li>SQLite</li><li>BigQuery</li><li>Pandas</li><li>NumPy</li><li>Plotly</li>
+            </ul>
+          </article>
+
+          <article class="profile-domain">
+            <span class="domain-code">WEB / 05</span>
             <h3>Fullstack delivery</h3>
-            <p>
-              Product interfaces and deployment workflows that carry technical prototypes into
-              systems people can operate.
-            </p>
+            <p>Accessible web products, dashboards, and interactive interfaces.</p>
             <ul class="skill-list" aria-label="Fullstack technologies">
-              <li>JavaScript</li><li>HTML / CSS</li><li>Docker</li><li>AWS</li><li>Twilio</li>
+              <li>JavaScript</li><li>HTML / CSS</li><li>Google Maps API</li><li>Folium</li><li>Java</li><li>C / C++</li>
+            </ul>
+          </article>
+
+          <article class="profile-domain">
+            <span class="domain-code">OPS / 06</span>
+            <h3>Cloud &amp; DevOps</h3>
+            <p>Cloud deployment, containers, CI/CD, and production operations.</p>
+            <ul class="skill-list" aria-label="Cloud and DevOps technologies">
+              <li>AWS</li><li>Azure</li><li>Google Cloud</li><li>Docker</li><li>GitHub Actions</li><li>Git</li><li>Linux</li>
             </ul>
           </article>
         </div>
@@ -153,32 +182,17 @@
             <div class="experience-date">Jan 2025 - Present</div>
             <div class="experience-body">
               <div class="experience-title">
-                <div><h3>Cofounder / Fullstack + AI Engineer</h3><p>OneSoul</p></div>
+                <div><h3>Founding AI Engineer</h3><p>1soul.ai</p></div>
                 <span>Current</span>
               </div>
               <p>
-                Building a Django platform on Supabase and AWS, AI-assisted WhatsApp onboarding,
-                embedding-driven agent interactions, and an MCP server for custom agent functions.
+                Developing the core WhatsApp experience through a FastAPI backend and Twilio,
+                including bot conversation logic and delivery. Built persona representations,
+                update rules, and custom environments for simulated persona-to-persona interactions,
+                with CI/CD through GitHub Actions.
               </p>
-              <ul class="experience-stack" aria-label="OneSoul technologies">
-                <li>Django</li><li>Python</li><li>Docker</li><li>AWS</li><li>LangChain</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="experience-entry">
-            <div class="experience-date">May 2024 - Feb 2026</div>
-            <div class="experience-body">
-              <div class="experience-title">
-                <div><h3>Cofounder / AI Engineer</h3><p>ReadyTraderOne</p></div>
-                <span>Current</span>
-              </div>
-              <p>
-                Designing multi-asset order-book simulations, bot mechanics, and Django routing
-                that delivers live simulation data through Celery.
-              </p>
-              <ul class="experience-stack" aria-label="ReadyTraderOne technologies">
-                <li>Django</li><li>Python</li><li>Celery</li><li>SQL</li><li>Selenium</li>
+              <ul class="experience-stack" aria-label="1soul.ai technologies">
+                <li>Python</li><li>FastAPI</li><li>Twilio</li><li>AI agents</li><li>GitHub Actions</li>
               </ul>
             </div>
           </article>
@@ -187,15 +201,35 @@
             <div class="experience-date">Jun - Aug 2025</div>
             <div class="experience-body">
               <div class="experience-title">
-                <div><h3>Data Analysis / AI Intern</h3><p>SAV Group</p></div>
+                <div><h3>AI + Data Analytics Intern</h3><p>SAV Group</p></div>
                 <span>Tech lead</span>
               </div>
               <p>
-                Led technical development across marketing dashboards, pricing and yield analysis,
-                and an AWS-hosted RAG assistant for lead generation and sales support.
+                Built Django lead-management dashboards that unified messaging services and
+                Monday.com, plus area-based pricing scripts used to evaluate planned acquisitions.
+                Delivered an AWS-hosted RAG assistant for fiftyonelondon's web and WhatsApp sales
+                workflows, led the development stream, and documented each tool with usable GUIs.
               </p>
               <ul class="experience-stack" aria-label="SAV Group technologies">
-                <li>Python</li><li>Django</li><li>SQL</li><li>AWS</li><li>Webhooks</li>
+                <li>Python</li><li>Django</li><li>SQL</li><li>AWS</li><li>Monday.com</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience-entry">
+            <div class="experience-date">May 2024 - Aug 2025</div>
+            <div class="experience-body">
+              <div class="experience-title">
+                <div><h3>Founding AI Engineer</h3><p>ReadyTraderOne</p></div>
+              </div>
+              <p>
+                Built multi-asset order-book simulations covering crypto, FX, fixed income, and
+                commodities, alongside a Django and Redis interface hosted on EC2. Designed
+                educational market scenarios and trading agents using grid and mean-reversion
+                strategies, qualitative news, and chat-driven market influence.
+              </p>
+              <ul class="experience-stack" aria-label="ReadyTraderOne technologies">
+                <li>Python</li><li>Django</li><li>Redis</li><li>AWS</li><li>Trading systems</li>
               </ul>
             </div>
           </article>
@@ -207,11 +241,13 @@
                 <div><h3>AI Engineer</h3><p>Propmoolah</p></div>
               </div>
               <p>
-                Developed a Twilio-based chat service, aggregated property and government data, and
-                automated research for urban-planning documents.
+                Reduced WhatsApp interaction time by over 60% by replacing menus with a FastAPI and
+                Twilio NLP-to-SQL flow. Automated government, Rightmove, and Zoopla data into
+                BigQuery, created time-series price forecasts, and built a sourced urban-planning
+                document workflow that helped unlock investment and the company's relocation.
               </p>
               <ul class="experience-stack" aria-label="Propmoolah technologies">
-                <li>Django</li><li>Python</li><li>Twilio</li><li>Selenium</li><li>SQL</li>
+                <li>Python</li><li>FastAPI</li><li>Twilio</li><li>BigQuery</li><li>Time series</li>
               </ul>
             </div>
           </article>
@@ -223,11 +259,30 @@
                 <div><h3>AI Engineer</h3><p>Venu.AI</p></div>
               </div>
               <p>
-                Built a Python workflow that researched prospective contacts, enriched CRM data,
-                and generated personalised outreach from structured templates.
+                Raised scraping success by 15% with custom lead-aggregation automation, then
+                improved outreach quality through automatically selected and filled email templates.
+                Designed an Azure pipeline to scale processing across a cluster with stronger data
+                validation.
               </p>
               <ul class="experience-stack" aria-label="Venu.AI technologies">
-                <li>Python</li><li>Hugging Face</li><li>Selenium</li><li>SQL</li><li>Gradio</li>
+                <li>Python</li><li>Web scraping</li><li>LLMs</li><li>Azure</li><li>Automation</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience-entry">
+            <div class="experience-date">Aug 2018 - Feb 2023</div>
+            <div class="experience-body">
+              <div class="experience-title">
+                <div><h3>Fullstack Engineer</h3><p>Freelance</p></div>
+              </div>
+              <p>
+                Built fullstack websites for a range of freelance projects, primarily Django-based
+                internal inventory-management systems. Worked end-to-end across application logic,
+                database-backed inventory flows, and browser interfaces.
+              </p>
+              <ul class="experience-stack" aria-label="Freelance technologies">
+                <li>Python</li><li>Django</li><li>JavaScript</li><li>HTML / CSS</li><li>SQL</li>
               </ul>
             </div>
           </article>
@@ -238,7 +293,7 @@
         <div class="section-heading section-heading--compact">
           <div>
             <span class="section-kicker">Foundation</span>
-            <h2>Education</h2>
+            <h2>Education &amp; certifications</h2>
           </div>
         </div>
 
@@ -246,8 +301,11 @@
           <article class="degree-card">
             <div class="degree-copy">
               <span>Queen Mary University of London</span>
-              <h3>BEng Computer Science</h3>
-              <p>Academic computer science alongside active AI and fullstack engineering work.</p>
+              <h3>BSc Computer Science</h3>
+              <p>
+                Sep 2025 - Jun 2028. Previously earned four A*s at A-level in Mathematics,
+                Further Mathematics, Physics, and Electronics.
+              </p>
             </div>
             <div class="degree-score" aria-label="Current GPA 84 percent">
               <strong>84</strong>
@@ -256,14 +314,76 @@
           </article>
 
           <div class="credentials">
-            <h3>Selected credentials</h3>
-            <ul>
-              <li><span>AWS Certified AI Practitioner</span><small>Amazon Web Services</small></li>
-              <li><span>Technical AI Safety</span><small>BlueDot Impact</small></li>
-              <li><span>Deep Learning Specialization</span><small>Coursera</small></li>
-              <li><span>Natural Language Processing Specialization</span><small>Coursera</small></li>
-              <li><span>IBM Data Science Professional Certificate</span><small>IBM</small></li>
-              <li><span>CS50W: Web Programming with Python and JavaScript</span><small>Harvard</small></li>
+            <span class="credentials-kicker">Professional development</span>
+            <h3>Professional certifications</h3>
+            <p class="credentials-intro">
+              Industry-recognised certification and focused programmes spanning applied AI,
+              technical AI safety, deep learning, NLP, mathematics, and data science.
+            </p>
+            <ul class="credential-list">
+              <li class="credential credential--featured">
+                <span class="credential-logo credential-logo--aws" aria-hidden="true">
+                  <img src="assets/certifications/aws.svg" alt="">
+                </span>
+                <span class="credential-copy">
+                  <small>Amazon Web Services <b>Industry certification</b></small>
+                  <strong>AWS Certified AI Practitioner</strong>
+                </span>
+              </li>
+              <li class="credential">
+                <span class="credential-logo" aria-hidden="true">
+                  <img src="assets/certifications/bluedot.svg" alt="">
+                </span>
+                <span class="credential-copy">
+                  <small>BlueDot Impact</small>
+                  <strong>Technical AI Safety</strong>
+                </span>
+              </li>
+              <li class="credential">
+                <span class="credential-logo" aria-hidden="true">
+                  <img src="assets/certifications/coursera.svg" alt="">
+                </span>
+                <span class="credential-copy">
+                  <small>Coursera</small>
+                  <strong>Deep Learning Specialization</strong>
+                </span>
+              </li>
+              <li class="credential">
+                <span class="credential-logo" aria-hidden="true">
+                  <img src="assets/certifications/coursera.svg" alt="">
+                </span>
+                <span class="credential-copy">
+                  <small>Coursera</small>
+                  <strong>Natural Language Processing Specialization</strong>
+                </span>
+              </li>
+              <li class="credential">
+                <span class="credential-logo" aria-hidden="true">
+                  <img src="assets/certifications/coursera.svg" alt="">
+                </span>
+                <span class="credential-copy">
+                  <small>Coursera</small>
+                  <strong>Mathematics for Machine Learning and Data Science</strong>
+                </span>
+              </li>
+              <li class="credential">
+                <span class="credential-logo credential-logo--wide" aria-hidden="true">
+                  <img src="assets/certifications/ibm.svg" alt="">
+                </span>
+                <span class="credential-copy">
+                  <small>IBM</small>
+                  <strong>Data Science Professional Certificate</strong>
+                </span>
+              </li>
+              <li class="credential">
+                <span class="credential-logo credential-logo--harvard" aria-hidden="true">
+                  <img src="assets/certifications/harvard.svg" alt="">
+                </span>
+                <span class="credential-copy">
+                  <small>Harvard University</small>
+                  <strong>CS50W: Web Programming with Python and JavaScript</strong>
+                </span>
+              </li>
             </ul>
           </div>
         </div>
@@ -276,12 +396,41 @@
             <h2>Projects</h2>
           </div>
           <p>
-            Research into model behaviour and practical experiments in reinforcement learning,
-            presented with the work itself.
+            Research into model behaviour and practical systems for multimodal retrieval and
+            accessible transport, presented with the work itself.
           </p>
         </div>
 
         <div class="research-showcase">
+          <article class="paper-project paper-project--private">
+            <figure class="paper-preview">
+              <img
+                src="assets/papers/private-is-not-privileged-first-page.png"
+                alt="First page of the Private Is Not Privileged research paper">
+              <figcaption>First page / August 2026</figcaption>
+            </figure>
+            <div class="paper-project-copy">
+              <span class="project-type">Mechanistic interpretability / Apart Research</span>
+              <h3>Private Is Not Privileged</h3>
+              <p>
+                Tests whether activation-based predictors have a genuine information advantage over
+                matched external baselines. In a 40-game Diplomacy experiment, an apparent white-box
+                advantage reversed once the text observer received matched post-deliberation
+                information, with robustness audits across model families, timings, and reader classes.
+              </p>
+              <ul class="project-facts" aria-label="Private Is Not Privileged highlights">
+                <li><strong>40</strong><span>Diplomacy games</span></li>
+                <li><strong>0.103</strong><span>activation Brier score</span></li>
+                <li><strong>0.033</strong><span>matched-text Brier score</span></li>
+              </ul>
+              <div class="project-links">
+                <a href="https://apartresearch.com/project/private-is-not-privileged-18om" target="_blank" rel="noreferrer">Read on Apart &#8599;</a>
+                <a href="https://github.com/Ultraviolet-Chikorita/Private-is-not-Privileged" target="_blank" rel="noreferrer">Code &#8599;</a>
+                <a href="assets/papers/private-is-not-privileged.pdf" target="_blank" rel="noreferrer">Open paper &#8599;</a>
+              </div>
+            </div>
+          </article>
+
           <article class="paper-project paper-project--graftloyal">
             <figure class="paper-preview">
               <img
@@ -339,16 +488,37 @@
           </article>
 
           <article class="build-project">
-            <span class="project-type">Reinforcement learning / Iterate RL Hack</span>
+            <span class="project-type">Multimodal RAG / May 2026</span>
             <div>
-              <h3>DeepQ web agent</h3>
+              <h3>LongVideo RAG</h3>
               <p>
-                A tabular Q-learning agent trained through generated navigation curricula on
-                crawlable local mirrors of real websites.
+                Fully local question answering over long videos using transcription, visual frame
+                retrieval, timestamped evidence clips, SQLite indexing, and Ollama generation.
               </p>
+              <ul class="project-tags" aria-label="LongVideo RAG technologies">
+                <li>Python</li><li>FFmpeg</li><li>Whisper</li><li>CLIP</li><li>Ollama</li><li>SQLite</li>
+              </ul>
             </div>
             <a
-              href="https://github.com/Ultraviolet-Chikorita/stuffForRLHack_2025"
+              href="https://github.com/Ultraviolet-Chikorita/videorag-local"
+              target="_blank"
+              rel="noreferrer">View code &#8599;</a>
+          </article>
+
+          <article class="build-project">
+            <span class="project-type">Accessible transport / August 2024</span>
+            <div>
+              <h3>TransitAssist</h3>
+              <p>
+                A Django public-transport planner with interactive routing and community reporting
+                for accessibility barriers and successful accessible journeys.
+              </p>
+              <ul class="project-tags" aria-label="TransitAssist technologies">
+                <li>Django</li><li>SQLite</li><li>JavaScript</li><li>Google Maps API</li>
+              </ul>
+            </div>
+            <a
+              href="https://github.com/Ultraviolet-Chikorita/TransitAssist"
               target="_blank"
               rel="noreferrer">View code &#8599;</a>
           </article>
@@ -426,25 +596,34 @@
           <p>Profiles, direct contact, and the full CV.</p>
         </div>
         <div class="contact-links">
-          <a href="mailto:yc235711131719@gmail.com">
-            <span>Email</span><small>yc235711131719@gmail.com</small>
-          </a>
+          <button
+            class="contact-copy-email"
+            id="copyEmail"
+            type="button"
+            data-email="ec25966@qmul.ac.uk"
+            aria-label="Copy email address ec25966@qmul.ac.uk"
+            aria-describedby="emailCopyStatus">
+            <span class="contact-action-label">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="8" y="8" width="11" height="11" rx="1"></rect>
+                <path d="M16 8V5H5v11h3"></path>
+              </svg>
+              Copy email
+            </span>
+            <small id="emailCopyStatus" aria-live="polite">ec25966@qmul.ac.uk</small>
+          </button>
           <a href="https://github.com/Ultraviolet-Chikorita" target="_blank" rel="noreferrer">
             <span>GitHub</span><small>Ultraviolet-Chikorita &#8599;</small>
           </a>
           <a href="https://www.linkedin.com/in/yuvan-chikka-2b053a295/" target="_blank" rel="noreferrer">
             <span>LinkedIn</span><small>Yuvan Chikka &#8599;</small>
           </a>
-          <a href="assets/Yuvan-Chikka-CV.pdf" target="_blank" rel="noreferrer">
+          <a href="assets/yuvan_cv.pdf" target="_blank" rel="noreferrer">
             <span>View CV</span><small>Open in a new tab &#8599;</small>
           </a>
         </div>
       </section>
 
-      <footer class="site-footer">
-        <span>Yuvan Chikka</span>
-        <span>London, UK</span>
-      </footer>
     </main>
   </div>
 
@@ -559,6 +738,6 @@
   </div>
 
   <script src="boss-fight.js?v=20"></script>
-  <script src="script.js?v=81"></script>
+  <script src="script.js?v=83"></script>
 </body>
 </html>

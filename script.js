@@ -4,6 +4,10 @@
   const SVG_NS = "http://www.w3.org/2000/svg";
 
   const cursor = document.getElementById("customCursor");
+  const cursorToggle = document.getElementById("cursorToggle");
+  const cursorToggleState = document.getElementById("cursorToggleState");
+  const copyEmailButton = document.getElementById("copyEmail");
+  const emailCopyStatus = document.getElementById("emailCopyStatus");
   const content = document.querySelector(".content");
   const eyePanel = document.querySelector(".eye-panel");
   const eyeCanvas = document.getElementById("techEye");
@@ -35,6 +39,10 @@
   const blurLayer = document.createElement("div");
   blurLayer.className = "selection-blur-layer";
   document.body.appendChild(blurLayer);
+  const reducedMotionPreference = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+  const forcedColorsPreference = window.matchMedia("(forced-colors: active)");
 
   const pointer = {
     clientX: window.innerWidth / 2,
@@ -72,6 +80,7 @@
   let eyeTargetX = 0;
   let eyeTargetY = 0;
   let selectionUpdateQueued = false;
+  let customCursorEnabled = false;
   let irritationLevel = 0;
   const victoryIrisTwitch = {
     active: false,
@@ -5127,6 +5136,76 @@
     "[data-cursor='text']"
   ].join(",");
 
+  function setCustomCursorEnabled(enabled) {
+    customCursorEnabled = Boolean(enabled);
+    document.body.classList.toggle(
+      "custom-cursor-enabled",
+      customCursorEnabled
+    );
+    cursorToggle.setAttribute("aria-pressed", String(customCursorEnabled));
+    cursorToggleState.textContent = customCursorEnabled ? "On" : "Off";
+
+    if (!customCursorEnabled) {
+      cursor.classList.remove("is-visible", "is-dark-on-light");
+      applyCursorState("default");
+    }
+  }
+
+  function bossRequiresCustomCursor() {
+    return document.body.classList.contains("easter-egg-scene") &&
+      document.body.classList.contains("boss-cursor-phase");
+  }
+
+  function shouldRenderCustomCursor() {
+    return customCursorEnabled || bossRequiresCustomCursor();
+  }
+
+  cursorToggle.addEventListener("click", () => {
+    setCustomCursorEnabled(!customCursorEnabled);
+  });
+
+  let emailCopyResetTimer = 0;
+
+  async function copyEmailAddress() {
+    const email = copyEmailButton?.dataset.email;
+
+    if (!email || !emailCopyStatus) {
+      return;
+    }
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(email);
+      } else {
+        const fallback = document.createElement("textarea");
+        fallback.value = email;
+        fallback.setAttribute("readonly", "");
+        fallback.style.position = "fixed";
+        fallback.style.opacity = "0";
+        document.body.appendChild(fallback);
+        fallback.select();
+        const copied = document.execCommand("copy");
+        fallback.remove();
+
+        if (!copied) {
+          throw new Error("Clipboard copy was unavailable");
+        }
+      }
+
+      window.clearTimeout(emailCopyResetTimer);
+      copyEmailButton.classList.add("is-copied");
+      emailCopyStatus.textContent = "Copied to clipboard";
+      emailCopyResetTimer = window.setTimeout(() => {
+        copyEmailButton.classList.remove("is-copied");
+        emailCopyStatus.textContent = email;
+      }, 2400);
+    } catch {
+      emailCopyStatus.textContent = `Copy failed — ${email}`;
+    }
+  }
+
+  copyEmailButton?.addEventListener("click", copyEmailAddress);
+
   function setPointerPosition(event) {
     pointer.clientX = event.clientX;
     pointer.clientY = event.clientY;
@@ -5419,6 +5498,12 @@
   }
 
   function updateCursor(now = performance.now()) {
+    if (!shouldRenderCustomCursor()) {
+      cursor.classList.remove("is-visible", "is-dark-on-light");
+      requestAnimationFrame(updateCursor);
+      return;
+    }
+
     if (pointer.insideViewport) {
       const cursorHalf = cursor.getBoundingClientRect().width / 2 || 9;
       cursor.classList.add("is-visible");
@@ -6375,8 +6460,19 @@
     blurLayer.classList.add("is-active");
   }
 
+  function customSelectionEffectsAllowed() {
+    return window.innerWidth > 820 &&
+      !reducedMotionPreference.matches &&
+      !forcedColorsPreference.matches;
+  }
+
   function updateSelectionGeometry() {
     selectionUpdateQueued = false;
+
+    if (!customSelectionEffectsAllowed()) {
+      clearSelectionGeometry();
+      return;
+    }
 
     const selection = window.getSelection();
     if (
@@ -6754,7 +6850,24 @@
     new ResizeObserver(queueSelectionUpdate).observe(content);
   }
 
+  const handleSelectionPreferenceChange = () => {
+    if (!customSelectionEffectsAllowed()) {
+      clearSelectionGeometry();
+      return;
+    }
+    queueSelectionUpdate();
+  };
+  reducedMotionPreference.addEventListener(
+    "change",
+    handleSelectionPreferenceChange
+  );
+  forcedColorsPreference.addEventListener(
+    "change",
+    handleSelectionPreferenceChange
+  );
+
   updateSelectionAccent();
+  setCustomCursorEnabled(false);
   prepareSoundAssets();
   initializeBossEncounter();
   resizeEyeCanvas();
