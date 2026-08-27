@@ -6033,7 +6033,6 @@
       eyeX += (geometry.eyeCenterX - eyeX) * recenterFollow;
       eyeY += (geometry.eyeCenterY - eyeY) * recenterFollow;
     } else if (selectionState.active) {
-      /* Selection owns the gaze completely until the selection is released. */
       eyeX = eyeTargetX;
       eyeY = eyeTargetY;
     } else {

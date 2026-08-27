@@ -8,6 +8,7 @@
   --line-bright: rgb(193 204 213 / 76%);
   --muted: rgb(190 200 208 / 76%);
   --selection-accent-rgb: 105 221 255;
+  --selection-highlight-rgb: 112 151 169;
   --panel-width: 23vw;
   --content-width: 77vw;
   --cursor-size: 18px;
@@ -377,8 +378,8 @@ body::after {
   display: block;
   width: 100%;
   height: auto;
-  opacity: 0.88;
-  filter: grayscale(1) brightness(1.2) contrast(0.9);
+  opacity: 0.82;
+  filter: grayscale(1) invert(1) brightness(1.55) contrast(1.1);
   transition: opacity 180ms ease, filter 180ms ease;
 }
 
@@ -394,8 +395,8 @@ body::after {
 
 .github-tracker:hover .tracker-chart img,
 .github-tracker:focus-visible .tracker-chart img {
-  opacity: 0.94;
-  filter: grayscale(1) brightness(1.38) contrast(0.88);
+  opacity: 0.96;
+  filter: grayscale(1) invert(1) brightness(1.72) contrast(1.12);
 }
 
 .header-rail {
@@ -1531,15 +1532,15 @@ body::after {
 
 .content::selection,
 .content *::selection {
-  background: rgb(var(--selection-accent-rgb) / 32%);
-  color: var(--text);
+  background: transparent;
+  color: inherit;
   text-shadow: none;
 }
 
 .content::-moz-selection,
 .content *::-moz-selection {
-  background: rgb(var(--selection-accent-rgb) / 32%);
-  color: var(--text);
+  background: transparent;
+  color: inherit;
   text-shadow: none;
 }
 
@@ -2170,19 +2171,18 @@ body.easter-egg-scene.boss-cursor-phase
 }
 
 #selectionPolygon {
-  fill: rgb(var(--selection-accent-rgb) / 3%);
-  stroke: rgb(var(--selection-accent-rgb));
-  stroke-width: 2;
+  fill: none;
+  stroke: rgb(var(--selection-highlight-rgb) / 42%);
+  stroke-width: 1;
   stroke-linecap: square;
   stroke-linejoin: miter;
   vector-effect: non-scaling-stroke;
-  transition: fill 180ms ease, stroke 180ms ease;
 }
 
 #selectionLines {
   fill: none;
-  stroke: rgb(202 209 215 / 82%);
-  stroke-width: 1.25;
+  stroke: rgb(var(--selection-highlight-rgb) / 38%);
+  stroke-width: 0.8;
   stroke-linecap: square;
   vector-effect: non-scaling-stroke;
 }
@@ -2193,9 +2193,9 @@ body.easter-egg-scene.boss-cursor-phase
   inset: 0;
   pointer-events: none;
   opacity: 0;
-  background: rgb(7 11 18 / 3%);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: rgb(7 11 18 / 0.5%);
+  backdrop-filter: blur(0.6px);
+  -webkit-backdrop-filter: blur(0.6px);
   mask-repeat: no-repeat;
   mask-position: 0 0;
   mask-origin: border-box;
@@ -2205,11 +2205,11 @@ body.easter-egg-scene.boss-cursor-phase
   -webkit-mask-position: 0 0;
   -webkit-mask-origin: border-box;
   -webkit-mask-size: 100% 100%;
-  transition: opacity 120ms ease;
+  transition: opacity 160ms ease;
 }
 
 .selection-blur-layer.is-active {
-  opacity: 1;
+  opacity: 0.48;
 }
 
 @media (max-width: 820px),
