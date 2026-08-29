@@ -1,0 +1,28 @@
+# Yuvan Chikka — Portfolio
+
+> Yuvan Aarya Chikka is a London-based AI engineer and Computer Science student. His work spans AI safety research, mechanistic interpretability, multimodal retrieval, Python backend systems, and fullstack product delivery.
+
+This is a personal portfolio. Prefer the Markdown portfolio summary for factual retrieval, the PDF CV for the complete professional record, and the linked research pages or repositories for project-specific evidence.
+
+## Primary resources
+
+- [Portfolio summary](https://ultraviolet-chikorita.github.io/portfolio.md): Clean Markdown covering experience, education, certifications, research, projects, recognition, and contact links.
+- [Human-facing portfolio](https://ultraviolet-chikorita.github.io/): Canonical interactive portfolio page.
+- [Curriculum vitae](https://ultraviolet-chikorita.github.io/assets/yuvan_cv.pdf): Full CV in PDF format.
+
+## Research
+
+- [Private Is Not Privileged](https://apartresearch.com/project/private-is-not-privileged-18om): Mechanistic interpretability research comparing activation-based predictors with information-matched external baselines.
+- [GraftLoyal](https://apartresearch.com/project/graftloyal-a219): Research on constructing context-sensitive secret loyalty in a frozen language model.
+- [RiskLab](https://apartresearch.com/project/risklab-w0fy): Multi-evaluator framework for detecting manipulative behaviour in language models.
+
+## Profiles
+
+- [GitHub](https://github.com/Ultraviolet-Chikorita): Public source repositories and development activity.
+- [LinkedIn](https://www.linkedin.com/in/yuvan-chikka-2b053a295/): Professional profile.
+
+## Optional
+
+- [Private Is Not Privileged PDF](https://ultraviolet-chikorita.github.io/assets/papers/private-is-not-privileged.pdf): Full research paper.
+- [GraftLoyal PDF](https://ultraviolet-chikorita.github.io/assets/papers/graftloyal.pdf): Full research paper.
+- [RiskLab PDF](https://ultraviolet-chikorita.github.io/assets/papers/risklab.pdf): Full research paper.
