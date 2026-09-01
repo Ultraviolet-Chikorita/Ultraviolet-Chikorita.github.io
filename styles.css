@@ -2602,7 +2602,12 @@ body.modal-open {
 @media (max-width: 820px) {
   :root {
     --panel-width: 0vw;
-    --content-width: 100vw;
+    --content-width: 100%;
+  }
+
+  html {
+    overflow-x: clip;
+    scrollbar-gutter: auto;
   }
 
   ::-webkit-scrollbar {
@@ -2821,9 +2826,8 @@ body.modal-open {
   }
 
   .tracker-chart img {
-    width: 360px;
-    max-width: none;
-    margin-left: calc(100% - 360px);
+    max-width: 360px;
+    margin-inline: auto;
   }
 
   .portfolio-section h2,
