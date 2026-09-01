@@ -2700,6 +2700,10 @@ body.modal-open {
     height: 110px;
   }
 
+  .experience-section {
+    overflow-x: clip;
+  }
+
   .degree-card,
   .credentials {
     padding: 36px 24px 30px;
